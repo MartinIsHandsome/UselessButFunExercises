@@ -1,0 +1,26 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    
+    // First excercise
+    
+    int enterNumber;
+    
+    cin >> enterNumber;
+    
+    while(enterNumber >= 1)
+    {
+    int h;
+    h = enterNumber%10;
+    cout << h;
+    enterNumber =  enterNumber / 10;
+    }
+    
+    //cout << "The last number is: " << enterNumber % 10 << endl;  
+    
+    //cout << "The second to last number is: " << (enterNumber / 10) % 10;
+}
