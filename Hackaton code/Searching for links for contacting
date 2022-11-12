@@ -1,0 +1,25 @@
+from bs4 import BeautifulSoup                                                                                                    
+from urllib.request import Request, urlopen                                                                                      
+import webbrowser                                                                                                                
+import requests                                                                                                                  
+import re                                                                                                                        
+import urllib.request                                                                                                            
+                                                                                                                                 
+url = "https://www.tutorialspoint.com/how-to-check-if-a-string-is-a-valid-keyword-in-python";                                    
+myList = ["https://www.facebook", "https://www.instagram", "https://www.twitter", "https://www.youtube", "https://www.linkedin"] 
+                                                                                                                                 
+                                                                                                                                 
+res = requests.get(url);                                                                                                         
+doc = BeautifulSoup(res.text, "html.parser")                                                                                     
+                                                                                                                                 
+link = doc.find("footer")                                                                                                        
+for link2 in doc.find_all("a", href=True):                                                                                       
+     print("Found a link:", link2['href'])                                                                                       
+     if bool([platform for platform in myList if (platform in link2['href'])]):                                                  
+          #If the link is a social media                                                                                         
+           print("PRESENT ON PAGE")                                                                                              
+     else:                                                                                                                       
+          #If the link is not a social media                                                                                     
+      print("MISSING")                                                                                                           
+                                                                                                                                 
+                                                                                                                                 
