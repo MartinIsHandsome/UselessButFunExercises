@@ -1,0 +1,39 @@
+// AppOneTest.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+
+	int num1, num2; 
+
+	cin >> num1 >> num2;
+
+	int n[999];
+	int matResult[999];
+	int i = 1;
+
+
+	for (;i < num1; i++)
+	{
+		
+		cin >> num2;
+		n[i] = num2;
+		matResult[i] = n[i];
+
+	}
+
+
+	cout << "//////////////////" << endl;
+	for (int j = 1; j < num1; j++)
+	{
+
+		cout << matResult[j] << endl;
+
+	}
+
+
+
+}
