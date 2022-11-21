@@ -5,35 +5,42 @@
 using namespace std;
 
 
-void createField(int playerX, int playerY)
-{
 
-	int sizeOfField[9][9];
-	int Collum = 0;
-	for (int i = 0; i < 9; i++)
-	{
-
-		for (int i1 = 0; i1 < 9; i1++) {
-			sizeOfField[i][i1] = i;
-			cout << "{ " << sizeOfField[i][i1] << "}";
-		}
-	}
-
-	
-
-}
 
 
 int main()
 {
 
-	 int sizePlaceX,sizePlaceY;
-	 
-	 cout << "Enter place of player X:";
-	 cin >> sizePlaceX;
+	int sizePlaceX, sizePlaceY;
 
-	 cout << "Enter place of player Y:";
-	 cin >> sizePlaceY;
-	 
+	cout << "Enter place of player X:";
+	cin >> sizePlaceX;
 
+	cout << "Enter place of player Y:";
+	cin >> sizePlaceY;
+
+
+	int Terrain[9][9];
+
+	for (int y = 0; y < 9; y++)
+	{
+
+		for (int x = 0; x < 9; x++)
+		{
+
+
+			if (Terrain[x][y] != Terrain[sizePlaceX][sizePlaceY])
+			{
+				cout << "{0}";
+			}
+
+			if (Terrain[y][x] == Terrain[sizePlaceX][sizePlaceY])
+			{
+				cout << "{X}";
+			}
+
+			
+		}
+		cout << endl;
+	}
 }
