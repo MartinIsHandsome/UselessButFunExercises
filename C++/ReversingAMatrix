@@ -1,0 +1,42 @@
+// ZadachiWeek7.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+int main()
+{
+ //  \n <-- Using for a gap/new line  
+	int size;
+	int numbers;
+	cout << "Enter the size of the line you wanna fill: ";
+	cin >> size;
+
+	int* num = new int[size];
+
+	for (int i = 0; i < size; i++)
+	{
+
+		cin >> numbers;
+		num[i] = numbers;
+
+	}
+
+	cout << "\n";
+	cout << "The numbers are: " << "\n";
+	for (int i1 = 0; i1 < size; i1++)
+	{
+
+		cout << "[" << num[i1] << "]" << "\n";
+
+	}
+
+
+	cout << "\n";
+	cout << "The numbers reversed are: " << "\n";
+	for (int j = size; j >= 0; j--)
+	{
+
+		cout << "[" << num[j] << "]" << endl;
+
+	}
+}
