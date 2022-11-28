@@ -1,0 +1,78 @@
+// ZadachiWeek7.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#include <random>
+#include <iostream>
+using namespace std;
+#include <cstdlib>
+#include <iostream>
+#include <time.h>
+/*
+void EnterMatrix()
+{
+	int random;
+	int shatMatrix [5][5];
+	for (int i = 0; i < 5; i++)
+	{
+
+
+		for (int i1 = 0; i1 < 5; i1++)
+		{
+		shatMatrix = 
+		}
+
+	}
+
+}
+*/
+
+void matrixPlus10Random()
+{
+
+	srand(time(0));
+	int sizeOfMatrix;
+	cout << "Enter the size of the Array: ";
+	cin >> sizeOfMatrix;
+	int randomNum;
+	int* matrixOne = new int[sizeOfMatrix];
+	int* matrixTwo = new int[sizeOfMatrix];
+	//rand() % 100 + 1;
+
+	for (int i = 0; i < sizeOfMatrix; i++)
+	{
+		randomNum = rand() % 100 + 1;
+		matrixOne[i] = randomNum;
+		matrixTwo[i] = matrixOne[i] + 10;
+		cout << matrixOne[i] << "\n";
+
+	}
+
+
+	cout << "\n";
+
+	for (int i = 0; i < sizeOfMatrix; i++)
+	{
+
+		cout << matrixTwo[i] << "\n";
+
+	}
+
+
+
+	delete[] matrixOne;
+	delete[] matrixTwo;
+
+}
+
+void YoZad4(int a[4], int b[5], int &c) {
+	c = *a;
+}
+
+
+
+int main()
+{
+	matrixPlus10Random();
+	//Да се напише програма, която извежда матрица, получена от въведената, като всеки нейн елемент е увеличен с 10.
+	
+
+}
