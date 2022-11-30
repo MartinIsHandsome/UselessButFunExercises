@@ -1,0 +1,88 @@
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+
+void EndlessNumberSize()
+{
+
+	int sizeOfNumber,sizeOfNumberTwo;
+	cout << "Enter size of the number you want: \n";
+	cin >> sizeOfNumber;
+	int powNumber = -1;
+	int number;
+	cout << "Enter number: \n";
+	cin >> number;
+	int addTheRealNumberHere [1024];
+	
+
+
+	cout << "Enter size of the second number you want: \n";
+	cin >> sizeOfNumberTwo;
+	int numberTwo;
+	cout << "Enter number: \n";
+	cin >> numberTwo;
+	int addTheRealNumberHereTwo[1024];
+
+	int answerToCalculation[1024];
+
+
+	for (int i = 0; i < sizeOfNumber; i++)
+	{
+	
+		addTheRealNumberHere[i] = number % 10;
+		number /= 10;
+
+		addTheRealNumberHereTwo[i] = numberTwo % 10;
+		numberTwo /= 10;
+
+		//cout << "["<<addTheRealNumberHere[i] << "]"  << endl;
+		//cout << pow(addTheRealNumberHere[i], pow(10, powNumber));
+	}
+
+	for (int i1 = sizeOfNumber-1; i1 >= 0; i1--)
+	{
+	
+	//cout << addTheRealNumberHere[i1] ;
+
+	}
+	cout << endl;
+
+	for (int i2 = sizeOfNumberTwo - 1; i2 >= 0; i2--)
+	{
+
+		//cout << addTheRealNumberHereTwo[i2];
+
+	}
+
+
+	for (int k = 0; k < sizeOfNumber; k++)
+	{
+		int sum = addTheRealNumberHere[k] + addTheRealNumberHereTwo[k];
+		if (sum > 9) {
+			sum -= 10; 
+		    addTheRealNumberHereTwo[k] += 1; 
+		
+		}
+		answerToCalculation[k] = sum;
+
+	}
+
+	for (int k2 = sizeOfNumberTwo -1; k2 >= 0; k2--)
+	{
+
+		cout << answerToCalculation[k2];
+
+	}
+
+
+}
+
+int main()
+{
+
+	EndlessNumberSize();
+
+}
