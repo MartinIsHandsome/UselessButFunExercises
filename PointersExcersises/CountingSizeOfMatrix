@@ -1,0 +1,12 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int randomNumbers[] = { 1,-8,9,10,12,91,-4,13,1 };
+
+	int sizeOfArray = sizeof(randomNumbers) / sizeof(int);
+
+	cout << sizeOfArray;
+}
