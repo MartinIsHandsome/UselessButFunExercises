@@ -1,0 +1,57 @@
+
+#include <iostream>
+using namespace std;
+#include <cstdlib>
+#include <iostream>
+#include <time.h>
+
+
+int main()
+{
+	srand(time(0));
+
+	const int sizeOfArray = 3;
+	int sumRowsAndShit = 0;
+	int sumRowsTwo = 0;
+	int RowX = sizeOfArray - 1;
+	int RowY = 0;
+
+
+	int arX [sizeOfArray][sizeOfArray];
+	
+	for (int i = 0; i < sizeOfArray; i++)
+	{
+
+
+		for (int j = 0; j < sizeOfArray; j++)
+		{
+			arX[i][j] = rand() % 89 + 10;
+
+			cout << "[" << arX[i][j] << "]  ";
+
+			if (i == j) {
+				sumRowsAndShit += arX[i][j];
+			}
+
+			if (j == RowX && i == RowY)
+			{
+				RowX -= 1;
+				RowY += 1;
+				sumRowsTwo += arX[i][j];
+			}
+		}
+
+
+
+		cout << "\n";
+
+		
+	}
+
+	cout << "The sum of the numbers is: " << sumRowsAndShit << "\n";
+
+	cout << "The sum of the numbers next is: " << sumRowsTwo;
+
+
+
+}
