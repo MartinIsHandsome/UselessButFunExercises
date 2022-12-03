@@ -2,11 +2,61 @@
 #include <iostream>
 using namespace std;
 
+
+void calculatingRows()
+{
+
+
+}
+
+
+
+void Sortinator3000(int soldiers[], int num)
+{
+	int min;
+
+	for (int i = 0; i < num; i++)
+	{
+		for (int k = i + 1; k < num; k++)
+		{
+
+			if(soldiers[k] < soldiers[i])
+			{
+			min = soldiers[i];
+			soldiers[i] = soldiers[k];
+			soldiers[k] = min;
+			}
+		}
+	}
+}
+
+
 int main()
 {
-	int randomNumbers[] = { 1,-8,9,10,12,91,-4,13,1 };
 
-	int sizeOfArray = sizeof(randomNumbers) / sizeof(int);
+	int numbersOfHealth[] = {34,2,100,2,89,77,90 ,22 ,1};
 
-	cout << sizeOfArray;
+	int countOfSoldiers = sizeof(numbersOfHealth) / sizeof(numbersOfHealth[0]);
+
+	cout << "There are " << countOfSoldiers << " friendly units on the map!";
+
+	cout << "\n" << "They have the following hp stats:" << "\n";
+
+	for (int i = 0; i < countOfSoldiers; i++)
+	{
+		cout << "Soldier N" << i+1 << " has " << numbersOfHealth[i] << " hp left." << "\n";
+	}
+	
+	cout << "Now they have been sorted better here!" << "\n";
+
+	Sortinator3000(numbersOfHealth, countOfSoldiers);
+ 
+		for (int i = 0; i < countOfSoldiers; i++){
+			cout << numbersOfHealth[i] << " ";
+		}
+
+	/*for (int i = 0; i < countOfSoldiers; i++){
+		cout << numbersOfHealth[i] << " ";
+	
+	}*/
 }
