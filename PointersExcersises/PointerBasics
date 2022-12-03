@@ -1,19 +1,25 @@
+// ConsoleApplication3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 
 #include <iostream>
 using namespace std;
+
 int main()
 {
+	int rawr[] = { 1,5,6,9,90,109291 };
 
-   
-	int number = 7;
-	int* j = &number;
-
-
-	cout << j <<endl;
-	cout << *j;
-
-	string food = "Pizza";  // A food variable of type string
-	string* ptr = &food;    // A pointer variable, with the name ptr, that stores the address of food
+	int sizeofInator = sizeof(rawr) / sizeof(rawr[0]);
 
 
+	cout << sizeofInator;
+	
+	
+	int*pRawr = rawr;
+
+	for (int i = 0; i < sizeofInator; i++)
+	{
+		cout << *(pRawr + i) << " ";
+	}
+
+	//This time with an Array as well, improvement people!
 }
