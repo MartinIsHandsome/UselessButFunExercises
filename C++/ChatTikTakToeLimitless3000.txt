@@ -1,0 +1,129 @@
+// ChessMaximus3000.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+using namespace std;
+
+void takingTurn(unsigned int  takingTurnPlayers, size_t Y, size_t X ,size_t takeSizeFromMain,char* arrayChessRemembering[])
+{
+	
+
+
+	for (int i = 0; i < 9; i--)
+	{
+
+		takingTurnPlayers += 1;
+
+		cout << "Choose y: \n";
+		cin >> Y;
+
+		cout << "Choose x: \n";
+		cin >> X;
+
+
+		cout << "\n";
+
+		for (int y = 0; y < takeSizeFromMain; y++) {
+
+			for (int x = 0; x < takeSizeFromMain; x++) {
+
+				//arrayChessRemembering[y][x] = arrayChess[y][x];
+
+
+				if (X == x + 1 && Y == y + 1 && takingTurnPlayers % 2 == 0)
+				{
+
+					arrayChessRemembering[y][x] = 'X';
+
+				}
+
+				if (X == x + 1 && Y == y + 1 && takingTurnPlayers % 2 != 0)
+				{
+
+					arrayChessRemembering[y][x] = 'O';
+
+				}
+
+				cout << "[ " << arrayChessRemembering[y][x] << " ]";
+
+
+
+			}
+
+
+
+			cout << "\n";
+
+
+
+		}
+
+
+
+		cout << "\n";
+	}
+
+}
+
+
+void paintingTiles(size_t takeSizeFromMain, size_t  takeTurnPlayers, size_t takingX, size_t takingY)
+{
+
+	char** arrayChessRemembering = new char* [takeSizeFromMain];
+
+
+
+
+	char** arrayChess = new char* [takeSizeFromMain];
+
+	for (int y = 0; y < takeSizeFromMain; y++)
+	{
+		arrayChess[y] = new char[takeSizeFromMain];
+		arrayChessRemembering[y] = new char[takeSizeFromMain];
+	}
+
+	for (int y = 0; y < takeSizeFromMain; y++) {
+		for (int x = 0; x < takeSizeFromMain; x++) {
+
+			//arrayChessRemembering[y][x] = arrayChess[y][x];
+
+
+			arrayChess[y][x] = ' ';
+
+
+			cout << "[" << arrayChess[y][x] << "]";
+
+		}
+
+
+		
+
+	
+
+	cout << "\n";
+
+	}
+	
+	takingTurn(takeTurnPlayers,takingX,takingY, takeSizeFromMain, arrayChessRemembering);
+	//takingAction(takeTurnPlayers);
+
+}
+
+
+int main()
+{
+	
+	int turnPlayers = 0;
+	int x1 = 0;
+	int y1 = 0;
+
+	int sizeArray = 0;
+	cout << "Size of the Sea Chess: ";
+	cin >> sizeArray;
+	cout << "\n";
+
+
+	paintingTiles(sizeArray,turnPlayers,x1,y1);
+	
+
+}
